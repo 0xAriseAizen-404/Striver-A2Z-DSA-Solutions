@@ -11,21 +11,21 @@
  */
 
 // Recursive Approach
-class Solution {
-private:
-    void postOrder(TreeNode *root, vector<int> &res) {
-        if (!root) return;
-        postOrder(root->left, res);
-        postOrder(root->right, res);
-        res.push_back(root->val);
-    }
-public:
-    vector<int> postorderTraversal(TreeNode* root) {
-        vector<int> res;
-        postOrder(root, res);
-        return res;
-    }
-};
+// class Solution {
+// private:
+//     void postOrder(TreeNode *root, vector<int> &res) {
+//         if (!root) return;
+//         postOrder(root->left, res);
+//         postOrder(root->right, res);
+//         res.push_back(root->val);
+//     }
+// public:
+//     vector<int> postorderTraversal(TreeNode* root) {
+//         vector<int> res;
+//         postOrder(root, res);
+//         return res;
+//     }
+// };
 // TC: O(n)
 // SC: O(h)  // O(log n) balanced, O(n) skewed
 
@@ -47,5 +47,30 @@ public:
 //         return res;
 //     }
 // };
+// TC: O(n)
+// SC: O(h)  // O(log n) balanced, O(n) skewed
+
+// Iterative Approach: Using Two Stacks
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> res;
+        if (!root) return res;
+        stack<TreeNode *> st1;
+        stack<TreeNode *> st2;
+        st1.push(root);
+        while (!st1.empty()) {
+            TreeNode *curr = st1.top(); st1.pop();
+            st2.push(curr);
+            if (curr->left) st1.push(curr->left);
+            if (curr->right) st1.push(curr->right);
+        }
+        while (!st2.empty()) {
+            res.push_back(st2.top()->val);
+            st2.pop();
+        }
+        return res;
+    }
+};
 // TC: O(n)
 // SC: O(h)  // O(log n) balanced, O(n) skewed
