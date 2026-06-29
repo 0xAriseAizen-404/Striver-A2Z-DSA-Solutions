@@ -25,8 +25,12 @@ public:
                     rightViewNodes.push_back(curr->val);
                     isFoundAtThisLevel = true;
                 }
+                // Right View
                 if (curr->right) que.push(curr->right);
                 if (curr->left) que.push(curr->left);
+                // // Left View
+                // if (curr->left) que.push(curr->left);
+                // if (curr->right) que.push(curr->right);
             }
         }
         return rightViewNodes;
