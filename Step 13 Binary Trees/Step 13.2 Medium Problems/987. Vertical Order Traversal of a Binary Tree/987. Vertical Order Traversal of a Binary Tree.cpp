@@ -23,7 +23,18 @@ private:
 public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
         dfs(root, 0, 0);
-        sort(nodes.begin(), nodes.end());
+        // sort(nodes.begin(), nodes.end());
+        sort(nodes.begin(), nodes.end(),
+            [](const tuple<int, int, int>& a,
+                const tuple<int, int, int>& b) {
+                if (get<0>(a) != get<0>(b))
+                    return get<0>(a) < get<0>(b);
+
+                if (get<1>(a) != get<1>(b))
+                    return get<1>(a) < get<1>(b);
+
+                return get<2>(a) < get<2>(b);
+            });
         vector<vector<int>> res;
         int prevCol = INT_MIN;
         for (auto [col, row, val]: nodes) {
