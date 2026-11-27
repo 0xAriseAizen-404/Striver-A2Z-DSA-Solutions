@@ -20,6 +20,13 @@ public:
 };
 // TC: O(4N)
 // SC: O(1)
+// [1, 1, 2, 1, 1] -> [1, 1, 0, 1, 1]
+// [2, 4, 6] -> [0, 0, 0]
+// [2, 2, 2, 1, 2, 2, 1, 2, 2, 2] -> [0, 0, 0, 1, 0, 0, 1, 0, 0, 0]
+// Odd -> 1
+// Even -> 0
+// Count subarray with K Odd Numbers
+// Count subarray with Goal Sum
 
 // Better Solution
 // class Solution {

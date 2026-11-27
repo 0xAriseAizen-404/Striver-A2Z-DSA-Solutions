@@ -25,7 +25,7 @@ Approach 2: use MinHeap with cmp, first insert all the heads, get the minHead an
 8.6.2 - Remove duplicates from sorted DLL -> just traverse and delete the references
 8.6.3 - Find pairs of given sum in DLL -> get the tail, use left and right pointer appraoch
 
-Patterns need to focus on ->
+Linked List -> Patterns need to focus on ->
 
 1. Slow and Fast Pointer Approach &&&& Its Add Ons
 2. Merge Sort for Linked Lists

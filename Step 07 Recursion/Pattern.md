@@ -20,5 +20,12 @@
 7.5.2 - word search - loop over through the grid, get the starting char of the word, start the search - substitute the character with '$' any char to know it is already visited - use flood fill algorithm
 7.5.3 - N Queen - topCol[col], currToTopRight[row + col], currToTopLeft[n-1 + col-row], go from row 0 to n-1, check these three things, subsititute with 'Q' go to next row, if all works and goes to row == n, then return the board, else backtrack and remove the subsititude with '.' and those three things also.
 7.5.4 - Rat in a Maze - if the current cell is 1, go and use substitute + flood fill algorithm to move to last cell
-7.5.5 - 
-7.5.6 - sudoku solver - 
+7.5.5 -
+7.5.6 - sudoku solver -
+
+Recursiong -> Patterns need to focus on ->
+
+1. Backtracking pattern
+2. Without Duplicates For Loop using
+3. With For Loops also inside
+4. helper(k) - helper(k-1) count pattern
